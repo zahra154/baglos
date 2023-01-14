@@ -1,0 +1,62 @@
+<form action="" class="signup-form p-4 w-100 ">
+  <legend class="w-100 text-center mb-3">
+    <span>Registration</span> <img src="../../assets/image/2.png" alt="">
+  </legend>
+
+  <div class="w-100 my-3">
+    <app-input [type]="inputTextType.text"
+               [inputFormControlName]="'name'"
+               [parentForm]="form"
+               [placeholder]="'Name'"
+               [currentValue]="form.value.name"
+               [label]="'Name'">
+    </app-input>
+  </div>
+
+  <div class="w-100 my-3">
+    <app-input [type]="inputTextType.text"
+               [inputFormControlName]="'email'"
+               [parentForm]="form"
+               [placeholder]="'Email'"
+               [currentValue]="form.value.email"
+               [label]="'Email'">
+    </app-input>
+  </div>
+  <div class="w-100 d-flex flex-row justify-content-between align-items-center flex-wrap my-3">
+    <app-radio-button label="female" [id]="gender.female" name="gender" class="flex-grow-1"></app-radio-button>
+    <app-radio-button label="male" [id]="gender.male" name="gender" class="flex-grow-1"></app-radio-button>
+  </div>
+
+
+  <div class="w-100 my-3">
+    <app-input [type]="inputTextType.password"
+               [inputFormControlName]="'password'"
+               [parentForm]="form"
+               [placeholder]="'Password'"
+               [currentValue]="form.value.password"
+               [label]="'Password'">
+    </app-input>
+
+  </div>
+  <div class="w-100 my-3">
+    <app-input [type]="inputTextType.password"
+               [inputFormControlName]="'confirmPassword'"
+               [parentForm]="form"
+               [placeholder]="'Confirm Password'"
+               [currentValue]="form.value.confirmPassword"
+               [label]="'Confirm Password'">
+    </app-input>
+
+  </div>
+
+
+
+  <div class="w-100 my-3">
+
+    <app-check-box></app-check-box>
+
+  </div>
+
+
+
+</form>

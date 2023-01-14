@@ -1,0 +1,62 @@
+@import 'src/scss/variables';
+@import './custom-styles/think-scroll';  ;
+
+
+
+
+:root {
+  touch-action: pan-x pan-y;
+  height: 100%;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  box-sizing: border-box;
+ // direction: rtl !important;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+  background-color: $dark-white;
+  font-family: $font-family-base;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100vw;
+
+  span {
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* relevant styles */
+
+
+
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+
+

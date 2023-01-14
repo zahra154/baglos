@@ -1,0 +1,42 @@
+@import '/src/scss/variables';
+
+.custom-input{
+  position: relative;
+  background-color: $white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: 8px;
+  height: 43px;
+  input{
+    border:none;
+    background-color: $white;
+    color: $gray;
+    height: 100%;
+    text-align: left;
+
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  .error{
+    color:$red;
+  }
+  &__label{
+    color:$dark-gray ;
+  }
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+
+div.number_input:has(input:focus){
+ // border:2px solid #00FFC2;
+}

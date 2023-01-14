@@ -1,0 +1,39 @@
+@import "src/scss/variables";
+
+.custom-radio-btn {
+  border-radius: 20px;
+  input{
+    display: none;
+  }
+  label {
+    font-weight: normal;
+    cursor: pointer;
+    padding: 6px 10px 3px 22px;
+    position: relative;
+    color: $gray;
+    font-size: 14px;
+
+    &::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1px solid $light-gray-100;
+      position: absolute;
+      left: 0;
+      top: 8px;
+    }
+
+  }
+    input:checked ~ label {
+      &::before{
+        background: $light-green-200;
+        border:none
+      }
+    }
+
+  //input:disabled ~ label {
+  //  //background: $gray-300;
+  //  color: white!important;
+  //}
+}

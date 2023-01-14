@@ -1,0 +1,9 @@
+<div class="container app-container px-0 border ">
+  <div class="w-100 app-container__header">
+    <app-header></app-header>
+  </div>
+  <main class="app-container__main " [ngStyle]="{'height': getMainContentHeight()}">
+  <ng-content></ng-content>
+  </main>
+  <app-footer class="app-container__footer"></app-footer>
+</div>

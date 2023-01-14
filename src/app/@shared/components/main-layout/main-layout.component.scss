@@ -1,0 +1,26 @@
+
+.app-container {
+  height: 100%;
+  padding: 0 !important;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  &__header{
+    height: 50px;
+  }
+  &__main {
+    flex-grow: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    min-height: 2em;
+    position: relative;
+
+  }
+  &__footer {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: white;
+    height: 86px;
+  }
+}
