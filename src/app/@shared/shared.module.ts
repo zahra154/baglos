@@ -13,6 +13,7 @@ import { CheckBoxComponent } from './components/check-box/check-box.component';
 import { InputComponent } from './components/input/input.component';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 import { FileInputComponent } from './components/file-input/file-input.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 
 
@@ -27,7 +28,8 @@ import { FileInputComponent } from './components/file-input/file-input.component
     CheckBoxComponent,
     InputComponent,
     TextAreaComponent,
-    FileInputComponent
+    FileInputComponent,
+    RatingComponent
 
   ],
   imports: [
