@@ -1,0 +1,9 @@
+@import "./src/scss/variables";
+
+.wrapper{
+  overflow-y: auto;
+  border: 1px solid $light-gray-100;
+  &__card{
+    flex: 0 0 33%;
+  }
+}

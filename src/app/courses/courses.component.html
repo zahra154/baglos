@@ -1,0 +1,9 @@
+<div class="w-100 h-100 d-flex flex-row align-items-center justify-content-center flex-wrap wrapper"
+     *ngIf="courses$">
+  <div class="wrapper__card border border-info" *ngFor="let course of courses$ | async">
+    <app-course-card [course]="course"></app-course-card>
+  </div>
+
+  <div></div>
+
+</div>

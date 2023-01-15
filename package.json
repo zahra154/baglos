@@ -1,5 +1,5 @@
 {
-  "name": "test-project",
+  "name": "bugloos",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -14,7 +14,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-slider/ngx-slider": "^2.0.4",
     "@angular/animations": "^14.2.4",
     "@angular/cdk": "^14.2.3",
     "@angular/common": "^14.2.4",

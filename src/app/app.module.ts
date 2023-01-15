@@ -24,7 +24,6 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-
 }
 
 @NgModule({

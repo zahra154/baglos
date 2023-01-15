@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {SignupComponent} from "./signup/signup.component";
-
 
 
 const routes: Routes = [
@@ -10,14 +9,18 @@ const routes: Routes = [
     redirectTo: 'signup', pathMatch: 'full'
   },
   {
-    path:'signup' , component: SignupComponent
-  }
-  //
-  // { path: '**', redirectTo: '' }
+    path: 'signup', component: SignupComponent
+  },
+  {
+    path: 'courses', loadChildren: () => import('./courses/courses.module')
+      .then((mod) => mod.CoursesModule)
+  },
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

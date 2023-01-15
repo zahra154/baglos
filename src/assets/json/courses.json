@@ -1,0 +1,44 @@
+{
+  "result": [
+    {
+      "filed": "programming",
+      "id": 1,
+      "name": "course1",
+      "description": "course 1 programming description",
+      "rate": 5,
+      "teacher": "mr Folani",
+      "profileUrl": "",
+      "image": "card3.png",
+      "cost": 420
+    },
+    {
+      "filed": "Test",
+      "id": 2,
+      "name": "course1 test",
+      "description": "course 1 test description",
+      "rate": 3,
+      "teacher": "mr Bisari",
+      "profileUrl": "",
+      "image": "card8.png",
+      "cost": 350
+    },
+    {
+      "filed": "programming",
+      "id": 3,
+      "name": "course 2 programming",
+      "description": "course 2 programing description",
+      "rate": 4,
+      "teacher": "mrs Folani",
+      "profileUrl": "",
+      "image": "card6.png",
+      "cost": "250"
+    }
+  ],
+  "errorInfo": null,
+  "statusCode": 200,
+  "errorMessage": null,
+  "success": true
+
+
+
+}
