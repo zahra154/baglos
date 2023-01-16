@@ -10,4 +10,5 @@ export interface CourseModel{
   cost: number;
 
 
+
 }

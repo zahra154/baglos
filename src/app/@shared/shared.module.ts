@@ -46,7 +46,8 @@ import { RatingComponent } from './components/rating/rating.component';
         RadioButtonComponent,
         FooterComponent,
         InputComponent,
-        CheckBoxComponent
+        CheckBoxComponent,
+        RatingComponent
     ],
   providers:[
     DecimalPipe
