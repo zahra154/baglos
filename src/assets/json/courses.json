@@ -7,7 +7,7 @@
       "description": "course 1 programming description",
       "rate": 5,
       "teacher": "mr Folani",
-      "profileUrl": "",
+      "profileUrl": "avatar.png",
       "image": "card3.png",
       "cost": 420
     },
@@ -18,7 +18,7 @@
       "description": "course 1 test description",
       "rate": 3.5,
       "teacher": "mr Bisari",
-      "profileUrl": "",
+      "profileUrl": "avatar.png",
       "image": "card8.png",
       "cost": 350
     },
@@ -27,9 +27,9 @@
       "id": 3,
       "name": "course 2 programming",
       "description": "course 2 programing description",
-      "rate": 4.5,
+      "rate": 4.2,
       "teacher": "mrs Folani",
-      "profileUrl": "",
+      "profileUrl": "avatar.png",
       "image": "card6.png",
       "cost": "250"
     }

@@ -1,22 +1,19 @@
-<div class="w-100 d-flex flex-row justify-content-center align-items-start">
-  <div class="card  border border-danger">
+
+  <div class="w-100 card d-flex flex-column justify-content-between align-items-center">
     <div class="w-100 card__img"
          [ngStyle]="{'background-image': 'url(' +'../../../../assets/image/'+ course?.image + ')'}">
     </div>
-    <div class="d-flex flex-row justify-content-between align-items-center m-2 border">
-      <div class="card__profile">
-        <img src="" alt="">
-        <span class="mx-3">{{course?.teacher}}</span>
+    <div class="w-100 d-flex flex-row justify-content-between align-items-center p-2">
+      <div class="card__profile align-self-center">
+        <img [src]="'../../../../assets/image/'+ course?.profileUrl" alt="">
+        <span class="mx-2 ">{{course?.teacher}}</span>
       </div>
       <button class="btn card__button">buy course</button>
     </div>
-
-    <div class="m-2 card__des text-left" >{{course?.description}}</div>
-
-    <div class="w-100 px-2 py-3 card__footer d-flex flex-row justify-content-between align-items-center">
+    <div class="card__des w-100 p-2 text-left" >{{course?.description}}</div>
+    <div class="w-100 px-2 py-3 card__footer w-100 d-flex flex-row justify-content-between align-items-center">
       <span >{{course?.cost}}$</span>
+      <app-rating [rating]="course?.rate" ></app-rating>
     </div>
-    <app-rating [rating]="course?.rate" ></app-rating>
-  </div>
 
-</div>
+  </div>

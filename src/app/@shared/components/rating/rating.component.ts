@@ -13,28 +13,38 @@ export class RatingComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.rating)
-    console.log(Math.floor(this.rating))
+    console.log();
+    console.log('remain', this.rating - Math.floor(this.rating) )
 
   }
   private get numberOfFullStars(): number {
-   // return Math.floor(this.rating);
-    return Math.floor(this.MAX_NUMBER_OF_STARS);
+    return Math.floor(this.rating);
   }
 
   private get numberOfEmptyStars(): number {
-    console.log('Math.ceil(this.rating)' , (this.rating) )
-    return this.MAX_NUMBER_OF_STARS - Math.ceil(this.rating);
+    return this.MAX_NUMBER_OF_STARS - Math.ceil(this.rating) ;
+  }
+  get emptyStars(): any[] {
+    return Array(this.numberOfEmptyStars);
   }
 
   get fullStars(): any[] {
     return Array(this.numberOfFullStars);
   }
 
-  get emptyStars(): any[] {
-    return Array(this.numberOfEmptyStars);
+  getHalfStar(): any{
+    return this.rating - Math.floor(this.rating)
+ }
+
+  //
+  // get hasAnHalfStar(): boolean {
+  //   return this.rating % 1 !== 0;
+  // }
+
+  getBgImage(){
+    const percent = Math.floor(this.getHalfStar() * 100);
+    return `linear-gradient(90deg, #ffe700 0%, #ffe700 ${percent}%, white ${100 - percent}%, white 100%)`;
+
   }
 
-  get hasAnHalfStar(): boolean {
-    return this.rating % 1 !== 0;
-  }
 }
