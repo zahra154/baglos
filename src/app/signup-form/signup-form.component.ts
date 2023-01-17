@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {InputTextTypeEnum} from "@shared/enums/input-text-type.enum";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {GenderEnum} from "@shared/enums/gender.enum";
 
 @Component({
@@ -25,16 +25,21 @@ export class SignupFormComponent implements OnInit {
 
   private createForm(): void {
     this.form = this.fb.group({
-      name: [],
-      lastName: [],
-      gender: [],
-      email: [],
-      password: [],
-      confirmPassword: [],
-      rememberMe: []
+      name: [null  ,Validators.required],
+      gender: [null ,],
+      email: [null , Validators.required],
+      password: [null , Validators.required ],
+      confirmPassword: [null , Validators.required],
+      image: [null ,],
+      rememberMe: [false ]
     });
 
   }
+  get f(){
+    return this.form.controls;
+  }
+
+  confirm(){}
 
 
 }

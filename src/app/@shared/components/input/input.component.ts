@@ -1,4 +1,14 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewEncapsulation
+} from '@angular/core';
 import {ControlContainer, FormGroup, FormGroupDirective} from "@angular/forms";
 import {InputTextTypeEnum} from "@shared/enums/input-text-type.enum";
 
@@ -6,6 +16,8 @@ import {InputTextTypeEnum} from "@shared/enums/input-text-type.enum";
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
+  encapsulation:ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   viewProviders: [
     {
       provide: ControlContainer,

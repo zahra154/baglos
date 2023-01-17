@@ -1,4 +1,7 @@
 <div class=" w-100 text-left button-switch" >
-    <input type="checkbox"  checked>
-    <label><span>Remember me</span></label>
+    <input type="checkbox"  [id]="id"
+           (change)="change($event)"
+           [value]="value"
+           [formControlName]="inputFormControlName" >
+    <label [for]="id"><span>{{label}}</span></label>
 </div>

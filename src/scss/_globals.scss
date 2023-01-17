@@ -10,13 +10,12 @@
 }
 
 html {
-  font-size: 12px;
 }
 
 body {
   box-sizing: border-box;
  // direction: rtl !important;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 18px;
   text-align: center;
@@ -59,4 +58,7 @@ li {
   text-align: center;
 }
 
-
+.btn-confirm{
+  background-color:$light-green-200 ;
+  color: $dark-white;
+}

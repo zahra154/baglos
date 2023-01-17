@@ -11,9 +11,8 @@ import {MainLayoutComponent} from "@shared/components/main-layout/main-layout.co
 import { RadioButtonComponent } from './components/radio-button/radio-button.component';
 import { CheckBoxComponent } from './components/check-box/check-box.component';
 import { InputComponent } from './components/input/input.component';
-import { TextAreaComponent } from './components/text-area/text-area.component';
-import { FileInputComponent } from './components/file-input/file-input.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
 
 
 
@@ -27,9 +26,8 @@ import { RatingComponent } from './components/rating/rating.component';
     RadioButtonComponent,
     CheckBoxComponent,
     InputComponent,
-    TextAreaComponent,
-    FileInputComponent,
-    RatingComponent
+    RatingComponent,
+    FileUploaderComponent
 
   ],
   imports: [
@@ -47,7 +45,8 @@ import { RatingComponent } from './components/rating/rating.component';
         FooterComponent,
         InputComponent,
         CheckBoxComponent,
-        RatingComponent
+        RatingComponent,
+        FileUploaderComponent
     ],
   providers:[
     DecimalPipe

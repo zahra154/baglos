@@ -1,8 +1,7 @@
-<form action="" class="signup-form p-4 w-100 ">
+<form [formGroup]="form" class="signup-form p-4 w-100 " (ngSubmit)="confirm()">
   <legend class="w-100 text-center mb-3">
     <span>Registration</span> <img src="../../assets/image/2.png" alt="">
   </legend>
-
   <div class="w-100 my-3">
     <app-input [type]="inputTextType.text"
                [inputFormControlName]="'name'"
@@ -21,10 +20,6 @@
                [currentValue]="form.value.email"
                [label]="'Email'">
     </app-input>
-  </div>
-  <div class="w-100 d-flex flex-row justify-content-between align-items-center flex-wrap my-3">
-    <app-radio-button label="female" [id]="gender.female" name="gender" class="flex-grow-1"></app-radio-button>
-    <app-radio-button label="male" [id]="gender.male" name="gender" class="flex-grow-1"></app-radio-button>
   </div>
 
 
@@ -50,13 +45,45 @@
   </div>
 
 
-
   <div class="w-100 my-3">
-
-    <app-check-box></app-check-box>
-
+    <app-file-uploader
+      [inputFormControlName]="'image'"
+      [parentForm]="form"
+      [maxSize]="3"
+    ></app-file-uploader>
   </div>
 
+  <div class="w-100 d-flex flex-row justify-content-between align-items-center flex-wrap my-3">
+    <app-radio-button class="flex-grow-1"
+                      label="female"
+                      name="gender"
+                      [id]="gender.female"
+                      [value]="gender[gender.female]"
+                      [inputFormControlName]="'gender'"
+    ></app-radio-button>
+    <app-radio-button class="flex-grow-1"
+                      label="male"
+                      name="gender"
+                      [id]="gender.male"
+                      [value]="gender[gender.male]"
+                      [inputFormControlName]="'gender'"
+
+
+    ></app-radio-button>
+  </div>
+
+  <div class="w-100 my-3">
+    <app-check-box label="Remember me"
+                   [id]="'rememberMe'"
+                   [inputFormControlName]="'rememberMe'">
+
+    </app-check-box>
+  </div>
+
+
+  <div class="w-100 my-3">
+    <button class="btn btn-confirm" type="submit" [disabled]="!form.valid">confirm</button>
+  </div>
 
 
 </form>
