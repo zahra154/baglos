@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   headerList = [
     {title:'Home'  , link: 'home'},
     {title:'All Course'  , link: '/courses'},
-    {title:'Sign Up'  , link: '/signup'},
+    {title:'Sign Up'  , link: '/auth/signup'},
     {title:'My Course'  , link: '/courses/my-course'},
 
     ]
