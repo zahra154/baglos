@@ -8,12 +8,11 @@ import {
 
 
 import { catchError, map, Observable, throwError } from 'rxjs';
-import { GlobalErrorHandler } from "@core/helper/globalErrorHandler";
+
 
 @Injectable()
 export class HttpErrorInterceptor implements HttpInterceptor {
-  constructor(private error: GlobalErrorHandler,
-  ) {
+  constructor() {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -28,9 +27,8 @@ export class HttpErrorInterceptor implements HttpInterceptor {
           if (error.error instanceof ErrorEvent) {
             errorMsg = `Error: ${error.error.message}`;
           } else {
-            this.error.handleErrorType(request.url, error);
-
-            errorMsg = `Error Code: ${error.status},  Message: ${error.message}`;
+             errorMsg = `Error Code: ${error.status},  Message: ${error.message}`;
+             //handle error here
           }
           return throwError(error);
         })
