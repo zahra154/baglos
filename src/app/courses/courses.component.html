@@ -13,7 +13,7 @@
   </div>
 
   <div
-    class="w-100 h-100 d-flex flex-row align-items-start justify-content-center justify-content-md-between flex-wrap p-2"
+    class="w-100 h-100 d-flex flex-row align-items-start justify-content-center justify-content-md-start gap-2 flex-wrap p-2"
     *ngIf="filteredCourses?.length > 0">
     <div class="wrapper__card my-2" *ngFor="let course of filteredCourses">
       <app-course-card [course]="course" (getSelectedCourses)="addToSelectedCourse($event)" ></app-course-card>
