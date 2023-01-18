@@ -4,8 +4,28 @@
     cursor: pointer;
     border-radius: $radius;
     border: 1px solid $light-gray-200;
+    cursor: pointer;
+    position: relative;
     &.active{
       border: 1px solid $light-green-200;
     }
+   > span {
+     &.notification{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       position: absolute;
+       top: -5px;
+       right: -6px;
+       border-radius: 50%;
+       color: white;
+       width: 13px;
+       background: #E20613;
+       height: 13px;
+       font-size: 8px;
+       text-align: center;
+     }
+    }
+
   }
 }

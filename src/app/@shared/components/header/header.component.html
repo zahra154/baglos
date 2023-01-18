@@ -4,7 +4,11 @@
         [routerLink]="item.link"
         [routerLinkActiveOptions]="{exact: true}"
         [routerLinkActive]="['active']"
-    class="px-2 py-1 mx-2 "
-    > {{item.title}}</li>
+    class="px-2 py-1 mx-2"
+    >
+      <span *ngIf=" (myCourses$ |async).length> 0 && item.id === 4" class="notification"> {{(myCourses$ |async).length}}</span>
+
+      {{item.title}}
+    </li>
   </ul>
 </header>

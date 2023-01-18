@@ -1,4 +1,7 @@
 import {Component, OnDestroy, OnInit } from '@angular/core';
+import {CourseModel} from "../../../courses/models/course.model";
+import {Observable} from "rxjs";
+import {CourseHelperService} from "../../../courses/services/course-helper.service";
 
 @Component({
   selector: 'app-header',
@@ -8,22 +11,19 @@ import {Component, OnDestroy, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   headerList = [
-    {title:'Home'  , link: 'home'},
-    {title:'All Course'  , link: '/courses'},
-    {title:'Sign Up'  , link: '/auth/signup'},
-    {title:'My Course'  , link: '/courses/my-course'},
-
-    ]
-
-  constructor( ) {
+    {id:1, title:'Home'  , link: 'home'},
+    {id:2, title:'All Course'  , link: '/courses'},
+    {id:3, title:'Sign Up'  , link: '/auth/signup'},
+    {id:4, title:'My Course'  , link: '/courses/my-course'},
+    ];
+  myCourses$: Observable< Array<CourseModel>>;
+  constructor(private courseHelperService : CourseHelperService) {
 
   }
 
-  ngAfterContentInit() {
-    const timeNow = new Date().toLocaleTimeString('fa-IR');
-    // this.setTimerValue(timeNow, true);
-  }
-  ngOnInit(): void {  };
+  ngOnInit(): void {
+    this.myCourses$ = this.courseHelperService.myCourses$;
+  };
 
   ngOnDestroy(): void {
 

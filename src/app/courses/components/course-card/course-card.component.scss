@@ -3,15 +3,17 @@
 .card {
   box-shadow: $shadow;
   border:1px solid $light-gray-200;
-  width: 300px;
-  height: 380px;
+  width: 290px;
+  height: 360px;
+  border-radius: $radius;
   &__img {
     height: 180px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
   }
-
   &__profile {
     img {
       width: 50px;
