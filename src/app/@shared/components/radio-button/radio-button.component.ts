@@ -21,6 +21,7 @@ export class RadioButtonComponent implements OnInit {
   @Input() name: string;
   @Input() value: string;
   @Input() inputFormControlName: string;
+  @Input() parentForm?: FormGroup;
 
 
   constructor() { }

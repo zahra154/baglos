@@ -4,13 +4,12 @@
          [ngModelOptions]="{standalone: true}"
          id="file-upload"
          (change)="changeFile($event)">
-  <label class="file-upload__label my-2 d-flex flex-row justify-content-between align-items-center" for="file-upload">
+  <label class="file-upload__label flex-grow-1 h-100 my-2 d-flex flex-row justify-content-between align-items-center" for="file-upload">
    <div>
      <img  class="file-upload__img" src="assets/icons/upload.svg"/>
      <span class="file-upload__title">{{fileLabel}}</span>
    </div>
-
-
   </label>
   <img *ngIf="file" class="file-upload__img" src="assets/icons/trash.svg" (click)="removeFile()" />
 </div>
+<div class="w-100 text-left text-danger px-2">{{errorMsg}}</div>

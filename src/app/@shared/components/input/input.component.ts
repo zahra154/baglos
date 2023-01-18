@@ -40,18 +40,22 @@ export class InputComponent implements OnInit  , OnChanges{
   @Input() maxLength: number = 100;
   @Input() currentValue;
   @Input() readOnly: boolean = false;
+  @Input() errorMsg: string = '';
 
   disabled: boolean = false;
   passwordFlag: boolean = false;
   inputType = InputTextTypeEnum ;
   value: string = '';
-
+  isTouched :boolean = false;
   constructor() { }
 
   ngOnInit(): void {
     if(this.type === this.inputType.password){
       this.passwordFlag = true;
     }
+  }
+  get f(){
+   return  this.parentForm.controls[this.inputFormControlName]
   }
 
 
@@ -77,6 +81,9 @@ export class InputComponent implements OnInit  , OnChanges{
       this.type = this.inputType.text
     }
 
+  }
+  touched() {
+    this.isTouched = true;
   }
 
 

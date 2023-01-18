@@ -14,6 +14,7 @@ export class SignupFormComponent implements OnInit {
   public inputTextType = InputTextTypeEnum;
   public form: FormGroup;
   public gender = GenderEnum;
+  public formSubmitted : boolean = false;
 
   constructor(private fb: FormBuilder,) {
   }
@@ -29,8 +30,8 @@ export class SignupFormComponent implements OnInit {
       email: [null , [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: [null , Validators.required ],
       confirmPassword: [null , Validators.required],
+      gender: [null ],
       image: [null ,],
-      gender: [null,],
       rememberMe: [false ]
     });
 
@@ -39,7 +40,16 @@ export class SignupFormComponent implements OnInit {
     return this.form.controls;
   }
 
-  confirm(){}
+
+  confirm(){
+    if(!this.form.valid){
+      return;
+    } else {
+      this.formSubmitted = true;
+      //send api to signup
+    }
+
+  }
 
 
 }

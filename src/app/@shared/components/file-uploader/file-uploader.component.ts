@@ -20,6 +20,7 @@ export class FileUploaderComponent implements OnInit {
   @Input() maxSize: number;
   fileLabel: string = 'Upload File';
   file: File;
+  errorMsg: string = '' ;
 
   constructor() { }
 
@@ -28,11 +29,12 @@ export class FileUploaderComponent implements OnInit {
 
 
   changeFile(event) {
-    const file = event.dataTransfer ? event.dataTransfer.files[0] : event.target.files[0];
+    this.file = event.dataTransfer ? event.dataTransfer.files[0] : event.target.files[0];
     const size = event.target.files[0]? event.target.files[0].size: 0;
 
     if(size > (this.maxSize * 1024)) {
-      // alert('this file is bigger than 3Mb');
+      this.errorMsg = 'this file is bigger than 3Mb';
+      this.file= null;
       return;
     } else {
       this.fileLabel = event.target.files[0]? event.target.files[0].name: 'Upload File';
@@ -40,13 +42,20 @@ export class FileUploaderComponent implements OnInit {
 
     const pattern = /image-*/;
     const reader = new FileReader();
-    if (!file.type.match(pattern)) {
-      // alert('this file format does not supported');
+    if (!this.file?.type.match(pattern)) {
+       this.errorMsg = 'this file format does not supported';
+      this.file= null;
       return;
     }
+    this.errorMsg ='';
     reader.onload = this.handleReaderLoaded.bind(this);
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(this.file);
 
+  }
+
+  get f(){
+    console.log(this.parentForm.controls[this.inputFormControlName])
+    return  this.parentForm.controls[this.inputFormControlName]
   }
 
   handleReaderLoaded(e) {
@@ -54,7 +63,6 @@ export class FileUploaderComponent implements OnInit {
     this.parentForm.controls[this.inputFormControlName].setValue(reader.result)
 
   }
-
 
   removeFile(){
     this.file = null;

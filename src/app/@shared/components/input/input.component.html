@@ -1,14 +1,26 @@
-<div class="w-100 custom-input d-flex flex-row justify-content-between align-items-center" >
+<div class="w-100">
+  <div class="w-100 custom-input d-flex flex-row justify-content-between align-items-center">
     <input id="" class="flex-grow-1 "
            [readOnly]="readOnly"
            [type]="inputType[type]"
            [value]="value"
            (input)="onChangeInput($event)"
            [disabled]="disabled"
+           (focus)="touched()"
            [placeholder]="placeholder">
-  <span *ngIf="passwordFlag" class="py-1 px-2 pointer flex-grow-0" style="" (click)="changeType()">
-     <img  class="" src="assets/icons/password.svg" >
+    <span *ngIf="passwordFlag" class="py-1 px-2 pointer flex-grow-0" style="" (click)="changeType()">
+     <img class="" src="assets/icons/password.svg">
    </span>
 
+  </div>
 
+  <div class="w-100 text-left text-danger px-2"
+       *ngIf="f.errors?.['required'] && isTouched">Required!
+  </div>
+
+  <div class="w-100 text-left text-danger px-2"
+       *ngIf="f.errors?.['pattern'] && f.value !=''">Wrong pattern!
+  </div>
 </div>
+
+
