@@ -9,6 +9,7 @@ export interface CourseModel{
   profileUrl: string;
   image: string;
   cost: number;
+  isSelected?: boolean;
 
 
 

@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+
 import {CourseModel} from "../../models/course.model";
 
 @Component({
@@ -6,9 +7,10 @@ import {CourseModel} from "../../models/course.model";
   templateUrl: './course-card.component.html',
   styleUrls: ['./course-card.component.scss']
 })
-export class CourseCardComponent implements OnInit {
+export class CourseCardComponent implements OnInit , OnChanges {
 @Input() course: CourseModel;
-@Output() getSelectedCourses : EventEmitter<CourseModel> = new EventEmitter();
+@Input() isSelected: boolean;
+@Output() getSelectedCourses : EventEmitter<{add:boolean , course: CourseModel }> = new EventEmitter();
 
 
   constructor() { }
@@ -17,7 +19,12 @@ export class CourseCardComponent implements OnInit {
   }
 
   protected selectCourse(){
-    this.getSelectedCourses.emit(this.course);
+    this.getSelectedCourses.emit({add:!this.course.isSelected , course: this.course });
+
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.isSelected = changes?.['isSelected']?.currentValue;
   }
 
 

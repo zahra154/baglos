@@ -57,12 +57,3 @@ li {
   text-align: center;
 }
 
-.btn-confirm{
-  background-color:$light-green-200 ;
-  color: $dark-white;
-  &:disabled{
-    background-color:$light-green-200 ;
-    color: $dark-white;
-    opacity: 0.5;
-  }
-}

@@ -13,6 +13,7 @@ import { CheckBoxComponent } from './components/check-box/check-box.component';
 import { InputComponent } from './components/input/input.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
+import { NoContentComponent } from './components/no-content/no-content.component';
 
 
 
@@ -27,7 +28,8 @@ import { FileUploaderComponent } from './components/file-uploader/file-uploader.
     CheckBoxComponent,
     InputComponent,
     RatingComponent,
-    FileUploaderComponent
+    FileUploaderComponent,
+    NoContentComponent
 
   ],
   imports: [
@@ -39,15 +41,16 @@ import { FileUploaderComponent } from './components/file-uploader/file-uploader.
     HttpClientModule,
 
   ],
-    exports: [
-        MainLayoutComponent,
-        RadioButtonComponent,
-        FooterComponent,
-        InputComponent,
-        CheckBoxComponent,
-        RatingComponent,
-        FileUploaderComponent
-    ],
+  exports: [
+    MainLayoutComponent,
+    RadioButtonComponent,
+    FooterComponent,
+    InputComponent,
+    CheckBoxComponent,
+    RatingComponent,
+    FileUploaderComponent,
+    NoContentComponent
+  ],
   providers:[
     DecimalPipe
   ]

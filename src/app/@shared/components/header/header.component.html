@@ -1,3 +1,10 @@
-<header>
-  <p>header</p>
+<header class="w-100 header text-left  ">
+  <ul class="w-100 d-flex mx-0 my-2 p-0 ">
+    <li *ngFor="let item of headerList"
+        [routerLink]="item.link"
+        [routerLinkActiveOptions]="{exact: true}"
+        [routerLinkActive]="['active']"
+    class="px-2 py-1 mx-2 "
+    > {{item.title}}</li>
+  </ul>
 </header>

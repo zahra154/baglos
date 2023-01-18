@@ -1,0 +1,12 @@
+<div class="w-100 h-100">
+
+  <div class="w-100 h-100 d-flex flex-row align-items-start justify-content-center justify-content-md-between flex-wrap p-2"
+       *ngIf="(myCourses$ | async)?.length !=0">
+    <div class="wrapper__card my-2" *ngFor="let course of myCourses$ | async">
+      <app-course-card [course]="course"></app-course-card>
+    </div>
+  </div>
+
+    <app-no-content  *ngIf="(myCourses$ | async)?.length==0"></app-no-content>
+
+</div>

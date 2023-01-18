@@ -1,0 +1,11 @@
+@import "src/scss/variables";
+.header{
+  ul li{
+    cursor: pointer;
+    border-radius: $radius;
+    border: 1px solid $light-gray-200;
+    &.active{
+      border: 1px solid $light-green-200;
+    }
+  }
+}

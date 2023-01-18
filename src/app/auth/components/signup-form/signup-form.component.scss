@@ -1,0 +1,24 @@
+@import "src/scss/variables";
+
+:host{
+  width: 100%;
+}
+
+.signup-form{
+  legend img {
+   margin-left: -15px;
+  }
+
+ &__btn-confirm{
+    background-color:$light-green-200 ;
+    color: $dark-white;
+    &:disabled{
+      background-color:$light-green-200 ;
+      color: $dark-white;
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: all !important;
+    }
+  }
+
+}
