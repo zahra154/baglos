@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit } from '@angular/core';
-import {CourseModel} from "../../../courses/models/course.model";
 import {Observable} from "rxjs";
+
+import {CourseModel} from "../../../courses/models/course.model";
 import {CourseHelperService} from "../../../courses/services/course-helper.service";
 
 @Component({
