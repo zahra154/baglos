@@ -19,7 +19,6 @@ body {
   font-weight: 500;
   line-height: 18px;
   text-align: center;
-  background-color: $dark-white;
   font-family: $font-family-base;
   margin: 0;
   overflow: hidden;
@@ -61,4 +60,9 @@ li {
 .btn-confirm{
   background-color:$light-green-200 ;
   color: $dark-white;
+  &:disabled{
+    background-color:$light-green-200 ;
+    color: $dark-white;
+    opacity: 0.5;
+  }
 }

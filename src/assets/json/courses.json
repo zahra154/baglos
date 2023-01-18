@@ -1,10 +1,11 @@
 {
   "result": [
     {
-      "filed": "programming",
+      "category": "Java",
+      "categoryId": 1,
       "id": 1,
-      "name": "course1",
-      "description": "course 1 programming description",
+      "name": "Java",
+      "description": "course Java programming description",
       "rate": 5,
       "teacher": "mr Folani",
       "profileUrl": "avatar.png",
@@ -12,10 +13,23 @@
       "cost": 420
     },
     {
-      "filed": "Test",
+      "category": "Java",
+      "categoryId": 1,
       "id": 2,
-      "name": "course1 test",
-      "description": "course 1 test description",
+      "name": "Spring",
+      "description": "course Java Spring programming description",
+      "rate": 3.2,
+      "teacher": "mr Folani",
+      "profileUrl": "avatar.png",
+      "image": "card3.png",
+      "cost": 420
+    },
+    {
+      "category": "Python",
+      "categoryId": 2,
+      "id": 3,
+      "name": "Python",
+      "description": "course Python programming description",
       "rate": 3.5,
       "teacher": "mr Bisari",
       "profileUrl": "avatar.png",
@@ -23,11 +37,24 @@
       "cost": 350
     },
     {
-      "filed": "programming",
-      "id": 3,
-      "name": "course 2 programming",
-      "description": "course 2 programing description",
-      "rate": 4.2,
+      "category": "Angular",
+      "categoryId": 3,
+      "id": 4,
+      "name": "course Angular programming",
+      "description": "course Angular programing description",
+      "rate": 4.7,
+      "teacher": "mrs Folani",
+      "profileUrl": "avatar.png",
+      "image": "card6.png",
+      "cost": "250"
+    },
+    {
+      "category": "React",
+      "categoryId": 4,
+      "id": 5,
+      "name": "React",
+      "description": "course React programing description",
+      "rate": 4.4,
       "teacher": "mrs Folani",
       "profileUrl": "avatar.png",
       "image": "card6.png",

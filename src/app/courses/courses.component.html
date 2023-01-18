@@ -1,7 +1,23 @@
-<div class="w-100 h-100 d-flex flex-row align-items-start justify-content-center  justify-content-md-between  flex-wrap wrapper p-2"
-     *ngIf="courses$">
-  <div class="wrapper__card my-1" *ngFor="let course of courses$ | async">
-    <app-course-card [course]="course"></app-course-card>
+<div class="w-100 wrapper ">
+  <div class="w-100 py-3 px-2 text-left wrapper__category d-flex" *ngIf="categories$">
+       <span class="px-3 py-2 mx-2 align-self-center" [ngClass]="{'selected' : selectedCategoryId === 0}"  (click)="removeCategoryFilter()">
+      All Courses
+    </span>
+    <span  *ngFor="let category of categories$ | async"
+           class="px-3 py-2 mx-2 align-self-center" [ngClass]="{'selected' : selectedCategoryId === category.id}"
+           (click)="filterByCategoryId(category)">
+      {{category.name}}
+    </span>
+
+  </div>
+
+  <div
+    class="w-100 h-100 d-flex flex-row align-items-start justify-content-center justify-content-md-between flex-wrap p-2"
+    *ngIf="filteredCourses?.length > 0">
+    <div class="wrapper__card my-2" *ngFor="let course of filteredCourses">
+      <app-course-card [course]="course" (getSelectedCourses)="addToSelectedCourse($event)"></app-course-card>
+    </div>
+
   </div>
 
 </div>

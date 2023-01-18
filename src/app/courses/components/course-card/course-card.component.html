@@ -8,7 +8,7 @@
         <img [src]="'../../../../assets/image/'+ course?.profileUrl" alt="">
         <span class="mx-2 ">{{course?.teacher}}</span>
       </div>
-      <button class="btn card__button">buy course</button>
+      <button class="btn card__button" (click)="selectCourse()">buy course</button>
     </div>
     <div class="card__des w-100 p-2 text-left" >{{course?.description}}</div>
     <div class="w-100 px-2 py-3 card__footer w-100 d-flex flex-row justify-content-between align-items-center">

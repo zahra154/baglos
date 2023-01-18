@@ -1,5 +1,6 @@
 export interface CourseModel{
-  filed: string;
+  category:string;
+  categoryId: number;
   id: number;
   name: string;
   description: string;

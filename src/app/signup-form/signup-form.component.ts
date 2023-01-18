@@ -26,11 +26,11 @@ export class SignupFormComponent implements OnInit {
   private createForm(): void {
     this.form = this.fb.group({
       name: [null  ,Validators.required],
-      gender: [null ,],
-      email: [null , Validators.required],
+      email: [null , [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: [null , Validators.required ],
       confirmPassword: [null , Validators.required],
       image: [null ,],
+      gender: [null,],
       rememberMe: [false ]
     });
 

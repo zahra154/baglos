@@ -31,7 +31,7 @@
         <div class="clipboard full"></div>
       </div>
     </div>
-    <div class="demo" *ngIf="this.getHalfStar()" >
+    <div class="demo" *ngIf="this.getHalfStar() != 0" >
       <div class="box">
         <div class="clipboard half" [ngStyle]="{'background-image' :getBgImage()}"></div>
       </div>

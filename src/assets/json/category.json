@@ -1,0 +1,29 @@
+{
+  "result": [
+    {
+      "name": "Java",
+      "id": 1
+    },
+    {
+      "name": "Python",
+      "id": 2
+    },
+    {
+      "name": "Angular",
+      "id": 3
+    },
+    {
+      "name": "React",
+      "id": 4
+    }
+
+
+  ],
+  "errorInfo": null,
+  "statusCode": 200,
+  "errorMessage": null,
+  "success": true
+
+
+
+}

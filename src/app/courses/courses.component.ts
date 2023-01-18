@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {CoursesService} from "./services/courses.service";
 import {Observable} from "rxjs";
-import {AbstractApiModel} from "@shared/models/abstract-api.model";
+
+import {CoursesService} from "./services/courses.service";
 import {CourseModel} from "./models/course.model";
+import {CourseCategoryModel} from "./models/course-category.model";
 import {map} from "rxjs/operators";
 
 @Component({
@@ -12,20 +13,47 @@ import {map} from "rxjs/operators";
 })
 export class CoursesComponent implements OnInit {
 
-  courses$: Observable<Array<CourseModel>>;
-
+  courses: Array<CourseModel>;
+  filteredCourses: Array<CourseModel>;
+  categories$ : Observable<Array<CourseCategoryModel>>;
+  selectedCourses: Array<CourseModel> = [];
+  selectedCategoryId: number = 0;
 
   constructor(private coursesService:CoursesService) { }
 
   ngOnInit(): void {
+    this.getCategories();
     this.getCourses();
-
   }
 
 
-  getCourses(){
-   this.courses$ = this.coursesService.getCourses();
-    console.log('courses' , this.courses$)
+  getCourses(): void{
+    this.coursesService.getCourses().subscribe(res => {
+      if(res){
+        this.courses = res;
+        this.filteredCourses = this.courses;
+      }
+   });
   }
 
+  getCategories():void{
+    this.categories$ = this.coursesService.getCategories();
+    console.log('this.categories$' , this.categories$)
+  }
+
+
+
+  protected addToSelectedCourse(course: CourseModel){
+    this.selectedCourses = [...this.selectedCourses  , course];
+  }
+
+  filterByCategoryId(category: CourseCategoryModel ){
+    this.selectedCategoryId = category.id;
+    this.filteredCourses = this.courses.filter(obj => obj.categoryId === category.id);
+  }
+
+  removeCategoryFilter(): void{
+    this.selectedCategoryId = 0;
+    this.filteredCourses = this.courses;
+  }
 }

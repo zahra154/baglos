@@ -12,10 +12,6 @@ export class RatingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.rating)
-    console.log();
-    console.log('remain', this.rating - Math.floor(this.rating) )
-
   }
   private get numberOfFullStars(): number {
     return Math.floor(this.rating);

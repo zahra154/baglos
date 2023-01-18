@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {CourseModel} from "../../models/course.model";
 
 @Component({
@@ -8,12 +8,18 @@ import {CourseModel} from "../../models/course.model";
 })
 export class CourseCardComponent implements OnInit {
 @Input() course: CourseModel;
+@Output() getSelectedCourses : EventEmitter<CourseModel> = new EventEmitter();
+
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log('course' , this.course)
-
   }
+
+  protected selectCourse(){
+    this.getSelectedCourses.emit(this.course);
+  }
+
+
 
 }
